@@ -41,4 +41,23 @@ Probability theory provides a framework for reasoning about likelihood of events
 * **Probability of an Outcome (s) or P(s)**: number that satisfies 2 properties
 
     1. For each outcomes s, 0 <= P(s) <= 1
-    2. \sum
+    2. Sum of p(s) = 1
+ 
+* **Probability of Event (E)**: sum of the probabilities of the outcomes of the experiment, P(E) = Sig(s in E) (P(s))
+* **Random Variable (V)**: numerical function on the outcomes of a probability space.
+* **Expected Value (E) of Random Variable E(V)**:
+
+### Independence, Conditional, Compound
+* **Independent Events**: A and B are independent
+    * P(A intercept B) = P(A) * P(B)
+    * P(A |B) = P(A)
+    * P(B |A) = P(B)
+
+* **Conditional Probability**: P(A |B) = P(A,B)/P(B)
+* **Bayes Theorem**: P(A |B) = P(B |A)P(A)/P(B)
+* **Joint Probability**: P(A,B) = P(B |A)P(A)
+* **Marginal Probability**: P(A)
+
+### Probability Distributions
+* **Probability Density Function (PDF)**:
+* **Cumulative Density Function (CDF)**: 
