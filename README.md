@@ -108,7 +108,7 @@ There are 3 main types:
 * **Variance** and **Standard Deviation**: Measure the dispersion of a set of data points around its mean value.
     * _Standard Deviation_ == sqrt(_Variance_)
     
-* **Coefficient of variation (CV)**: Measure the ratio of dispersion of a single variable or multi-variables with different dram (e.g. usa-vnd).
+* **Coefficient of variation (CV)**: Measure the ratio of dispersion of a single variable or multi-variables with different unit (e.g. usa-vnd).
     * _CV_ == _Standard Deviation_ / _mean_
 
 ### Shape
@@ -117,8 +117,68 @@ There are 3 main types:
     * Negative: the outliers are to the left.
 
 ### Correlation Analysis
-* **Covariance** and **Correlation**: Measures the joint variability of two variables or the relationship between them. But unlike _covariance_, _correlation_ is standardized measure that takes on values between _(-1 and 1).
+* **Covariance** and **Correlation**: Measures the joint variability of two variables or the relationship between them. But unlike _covariance_, _correlation_ is standardized measure that takes on values between _(-1 and 1)_.
     * Positive value: 2 variables move together.
     * Negative value: they move in opposite directions.
     * Zero: they are independent.
-         
+____
+
+## Data Cleaning
+_Data Cleaning_ is the process of turning raw data into a clean and analyzable data set. "Garbage in, garbage out". Make sure garbage doesn't get put in.
+
+### Errors vs. Artifacts
+
+* **Errors**: Information that is lost during acquisition and can be recovered e.g. power outage, crashed servers.
+* **Artifacts**: Systematic problems that arise from the data cleaning process. These problems can be corrected by we must first discover them.
+
+### Data Compatibility
+
+Data compatibility problems arise when merging datasets. Make sure you are comparing "apples to apples" and not "apples to aranges". Main types of conversions/unifications:
+    * Units (metric vs. imperial)
+    * Numbers (decimals vs. integers)
+    * Names (John Smith vs. Smith, John)
+    * Time/dates (UNIX vs. UTC vs. GMT)
+    * Currency (type, inflation-adjusted, dividends)
+    
+### Data Imputation
+
+Data imputation is the process of dealing with missing values. The proper methods depend on the type of data we are working with. Gereral methods include:
+    * Drop all records containing missing data.
+    * Heuristic-based: make a reasonable guess based on knowledge of the underlying domain.
+    * Mean Value: fill in missing data with the mean.
+    * Random Value
+    * Nearest Neighbor: fill in missing data using similar data points.
+    * Interpolation: use a method like linear regression to prodict the value of the missing data.
+    
+### Outlier Detection
+
+Outliers can interfere with analysis and often arise from mistakes during data collection. It makes sense to run a "sanity check".
+
+### Miscellaneous
+
+Lowercasing, removing non-alphanumeric, repairing, unidecode, removing unknown characters.
+
+_Note_: when cleaning data, always maintain both the raw data and the cleaned versions. The raw data should be kept intact and preserved for future use. Any type of data cleaning/analysis should be done on a copy of the raw data.
+______________
+
+## Feature Engineering
+_Feature enginnering (FE)_ is the process of using domain knowledge to create feature or input variables that help machine learning algorithms perform better. Done correctly, it can help increase the predictive power of your models. _FE_ is more of an art than science. It is one of the most important steps in creating a good model. As Andrew Ng puts in:
+    _"Coming up with features is difficult, time-consuming, requires expert knowledge. 'Applied machine learning' is basically feature engineering."_
+    
+### Continuous Data
+* **Raw Measures**: data that hasn't been transformed yet.
+* **Rounding**: sometimes precision is noise; round to nearest integer, decimal etc..
+* **Scaling**: log, z-score, minmax scale, etc...
+* **Imputation**: fill in missing values using mean, median, model output, etc...
+* **Binning**: trasforming numeric features into categorical ones (or binned) e.g. values between 1-10 belong to A, between 10-20 belong to B, etc...
+* **Interactions**: interactions between features: e.g. subtraction, addition, multiplication, statistical test.
+* **Statistical**: log/power transorm (helps turn skewed distributions more normal), Box-Cox, etc...
+* **Row Statistics**: number of NaN's, 0's, negative values, max, min, etc...
+* **Dimensionality Reduction**: using PCA, clustering, factor analysis, etc...
+
+### Discrete Data
+* **Encoding**: since some ML algorithms connot work on categorical data, we nee to turn cateforical data into numerical data or vectors.
+* **Ordinal Values**: convert each distinct feature into a random number, e.g. (a,b,c) becomes (1,2,3).
+* **One-hot Encoding**: each of the m features becomes a vector of length m with containing only one 1, e.g. (a,b,c) becomes ((1,0,0),(0,1,0),(0,0,1)).
+* **Feature Hashing Scheme**: turns arbitrary features into indices in a vector or matrix.
+* **Embeddings**: if using words, convert words to vectors (word embeddings).
