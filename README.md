@@ -13,6 +13,7 @@ Two paradigms of data research:
 2. **Data-Driven**: Given some data, what interesting problems can be solved with it?
 
 The heart of data science is to always ask questions. Always be curious about the world. _What can we learn from this data and How to do it?_
+____________________
 
 ## Types of Data
 * **Structured**: e.g. tables, spreadsheets, or relational databases.
@@ -29,11 +30,13 @@ The heart of data science is to always ask questions. Always be curious about th
 3. SQL:
 4. JSON:
 5. Protocol buffers:
+____________________
 
 ## Main Types of Problems
 Two problems arise repeatedly in data science:
 1. **Classifications**: Assigning something to a discrete set of possibilites. e.g. spam or non-spam, blood type, ...
 2. **Regression**: Predicting a numerical value. e.g. someones's income, next year GDP, stock price, ...
+_____________
 
 ## Probability Overview
 Probability is **the likelihood of an event occurring**.
@@ -85,3 +88,37 @@ Probability is **the likelihood of an event occurring**.
 * **Probability Density Function (PDF)**: This is impossible to know exactly probability of a continuous random variable. So the _probability distribution_ is often based on the interval that outcomes belong to. That is depicted by _probability density function_.
 
 * **Cumulative Density Function (CDF)**: CDF has a range from 0 to 1 and represents the sum of all the _PDF_ values up to the point we are interseted in.
+___________
+
+## Descriptive Statistics
+Provides a way of capturing a given data set or sample.
+
+There are 3 main types: 
+    1. Centrality
+    2. Variability (Spread)
+    3. Shape
+    
+### Centrality
+* **Arithmetic Mean**: aka _Additive Mean_, it's just simply the average, so it has a severe effect of outliers
+* **Geometric Mean**: aka _Multiplicative Mean_. It calculates averaging ratios and the effect of outliers on it is mild. Always less than arithmetic mean.
+* **Median**: The median is the midpoint of the ordered dataset or the point that separates dataset in two equal pieces.
+* **Mode**: Most frequent element in a dataset.
+
+### Variability
+* **Variance** and **Standard Deviation**: Measure the dispersion of a set of data points around its mean value.
+    * _Standard Deviation_ == sqrt(_Variance_)
+    
+* **Coefficient of variation (CV)**: Measure the ratio of dispersion of a single variable or multi-variables with different dram (e.g. usa-vnd).
+    * _CV_ == _Standard Deviation_ / _mean_
+
+### Shape
+* **Skewness**: Measure the asymmetry that indicates whether the observations in a dataset are concentrated on one side.
+    * Positive: the outliers are to the right (long tail to the right in the distribution graph).
+    * Negative: the outliers are to the left.
+
+### Correlation Analysis
+* **Covariance** and **Correlation**: Measures the joint variability of two variables or the relationship between them. But unlike _covariance_, _correlation_ is standardized measure that takes on values between _(-1 and 1).
+    * Positive value: 2 variables move together.
+    * Negative value: they move in opposite directions.
+    * Zero: they are independent.
+         
