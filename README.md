@@ -90,39 +90,6 @@ Probability is **the likelihood of an event occurring**.
 * **Cumulative Density Function (CDF)**: CDF has a range from 0 to 1 and represents the sum of all the _PDF_ values up to the point we are interseted in.
 ___________
 
-## Descriptive Statistics
-Provides a way of capturing a given data set or sample.
-
-There are 3 main types: 
-    1. Centrality
-    2. Variability (Spread)
-    3. Shape
-    
-### Centrality
-* **Arithmetic Mean**: aka _Additive Mean_, it's just simply the average, so it has a severe effect of outliers
-* **Geometric Mean**: aka _Multiplicative Mean_. It calculates averaging ratios and the effect of outliers on it is mild. Always less than arithmetic mean.
-* **Median**: The median is the midpoint of the ordered dataset or the point that separates dataset in two equal pieces.
-* **Mode**: Most frequent element in a dataset.
-
-### Variability
-* **Variance** and **Standard Deviation**: Measure the dispersion of a set of data points around its mean value.
-    * _Standard Deviation_ == sqrt(_Variance_)
-    
-* **Coefficient of variation (CV)**: Measure the ratio of dispersion of a single variable or multi-variables with different unit (e.g. usa-vnd).
-    * _CV_ == _Standard Deviation_ / _mean_
-
-### Shape
-* **Skewness**: Measure the asymmetry that indicates whether the observations in a dataset are concentrated on one side.
-    * Positive: the outliers are to the right (long tail to the right in the distribution graph).
-    * Negative: the outliers are to the left.
-
-### Correlation Analysis
-* **Covariance** and **Correlation**: Measures the joint variability of two variables or the relationship between them. But unlike _covariance_, _correlation_ is standardized measure that takes on values between _(-1 and 1)_.
-    * Positive value: 2 variables move together.
-    * Negative value: they move in opposite directions.
-    * Zero: they are independent.
-____
-
 ## Data Cleaning
 _Data Cleaning_ is the process of turning raw data into a clean and analyzable data set. "Garbage in, garbage out". Make sure garbage doesn't get put in.
 
@@ -182,3 +149,79 @@ _Feature enginnering (FE)_ is the process of using domain knowledge to create fe
 * **One-hot Encoding**: each of the m features becomes a vector of length m with containing only one 1, e.g. (a,b,c) becomes ((1,0,0),(0,1,0),(0,0,1)).
 * **Feature Hashing Scheme**: turns arbitrary features into indices in a vector or matrix.
 * **Embeddings**: if using words, convert words to vectors (word embeddings).
+_________
+
+## Descriptive Statistics
+Provides a way of capturing a given data set or sample.
+
+There are 3 main types: 
+    1. Centrality
+    2. Variability (Spread)
+    3. Shape
+    
+### Centrality
+* **Arithmetic Mean**: aka _Additive Mean_, it's just simply the average, so it has a severe effect of outliers
+* **Geometric Mean**: aka _Multiplicative Mean_. It calculates averaging ratios and the effect of outliers on it is mild. Always less than arithmetic mean.
+* **Median**: The median is the midpoint of the ordered dataset or the point that separates dataset in two equal pieces.
+* **Mode**: Most frequent element in a dataset.
+
+### Variability
+* **Variance** and **Standard Deviation**: Measure the dispersion of a set of data points around its mean value.
+    * _Standard Deviation_ == sqrt(_Variance_)
+    
+* **Coefficient of variation (CV)**: Measure the ratio of dispersion of a single variable or multi-variables with different unit (e.g. usa-vnd).
+    * _CV_ == _Standard Deviation_ / _mean_
+
+### Shape
+* **Skewness**: Measure the asymmetry that indicates whether the observations in a dataset are concentrated on one side.
+    * Positive: the outliers are to the right (long tail to the right in the distribution graph).
+    * Negative: the outliers are to the left.
+
+### Correlation Analysis
+* **Covariance** and **Correlation**: Measures the joint variability of two variables or the relationship between them. But unlike _covariance_, _correlation_ is standardized measure that takes on values between _(-1 and 1)_.
+    * Positive value: 2 variables move together.
+    * Negative value: they move in opposite directions.
+    * Zero: they are independent.
+______
+
+## Inferential Statistics
+
+This is a method that rely on probability theory and **distribution (usually probability distribution)** to predict population values based on sample data.
+
+Two main approaches:
+    1. **Estimation**: Calculates _Confidence Interval_ to estimate an interval with a certain percentage of confidence the population parameter wil fall.
+    2. **Hypothesis testing**: When we are making a decision, we need a yes-no answer. The correct approach in this case is using a test.
+_______
+
+## Classic Statistical Distributions
+
+A distribution is a function that shows the possible values for a variable and how often they occur. It is a _common mistake_ to believe that the distribution is the _graph_, we often use graphs to visualize the data.
+
+### Discrete
+1. **Binomial Distribution**
+    
+    * Measures the frequency of occurrence of one of the possible outcomes over the n trials. E.g.: Determining how many times we expect to get a heads if we flip a coin 10 coins.
+    * Y ~ Bin(_n_,_p_) | Y: success rate -- n: number of trails -- p: prob of success.
+    * PDF: P(Y=y) = C(y,n) * _p^y_ * _(1-p)^(n-y)_
+    * Often used when trying to predict how likely an event is to occur over a series of trials.
+
+2. **Poisson Distribution**: 
+    
+    * When we want to know the likelihood of a certain event occurring over a given interval of time or distance. 
+    * Y ~ Po(_lambda_) | Y: a specific outcome -- lambda: a interval of time or distance.
+    * Used to determine how likely a specific outcome is, knowing how often the event usually occurs. Often incorporated in marketing analysis to determine whether above average visits are out of the ordinary or not.    
+    
+### Continuous
+1. **Normal/ Gaussian Distribution**
+
+    * Represents a distribution that most natural events follow. E.g. often observed in the size of animals in the wilderness.
+    * Y ~ N(_mean_,_var_)
+    * Its graph is bell-shaped curve, symmetric and ha thin tails.
+    * _68%-95%-99% rule_: 68% of probability mass fall within _1*var_ of the _mean_, 95% within _2*var_, and 99.7% within _3*var_.
+    * Could be standardized to use the Z-table.
+    
+2. **Logistic Distribution**
+
+    * Determine how continuous variable inputs can affect the probability of a binary outcome.
+    * Y ~ Logistic(_mean_,_s_) | s: scale parameter.
+    * Often used in sports to anticipate how a player's or team's performance can determine the outcome of the match.
