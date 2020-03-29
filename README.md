@@ -1,6 +1,7 @@
 # Overall of Data Science
 
 from: 
+
 1. [Marverick Lin](http://mavericklin.com)
 2. [365 Data Science](https://365datascience.com/)
 3. [Machine Learning Co Ban by VuHuuTiep](https://github.com/tiepvupsu/ebookMLCB)
@@ -10,6 +11,7 @@ from:
 Multi-disciplinary field that brings together concepts from computer science, statistics/machine learning, and data analysis to understand and extract insights from data.
 
 Two paradigms of data research:
+
 1. **Hypothesis-Driven**: Given a problem, what kind of data do we need to help solve it?
 2. **Data-Driven**: Given some data, what interesting problems can be solved with it?
 
@@ -26,6 +28,7 @@ ____________________
 ### Data Sources/ Fomats
 **Sources**: Companies/Proprietary data, API, Goverment, Academic, Web Scraping/ Crawling.
 **Formats** (most common):
+
 1. CSV:
 2. XML:
 3. SQL:
@@ -35,6 +38,7 @@ ____________________
 
 ## Main Types of Problems
 Two problems arise repeatedly in data science:
+
 1. **Classifications**: Assigning something to a discrete set of possibilites. e.g. spam or non-spam, blood type, ...
 2. **Regression**: Predicting a numerical value. e.g. someones's income, next year GDP, stock price, ...
 _____________
@@ -52,7 +56,7 @@ Probability is **the likelihood of an event occurring**.
 
 * **Trial**: Observing an event occcur and recording the outcome - e.g. flipping a coin and recording its outcome.
 * **Experiment**: A collection of one or multiple trials - e.g. flipping a coin 20 times and recording the 20 individual outcomes.
-* **Expected Value**: The specific outcome we expect to occure when we run an experiment. **E(X) = P x X**
+* **Expected Value**: The specific outcome we expect to occure when we run an experiment.-**E(X) = P x X**
 
 ### Independence, Conditional, Compound
 * **Joint Probability**: P(A,B) = P(B |A)P(A) = P(A |B)P(B)
@@ -129,6 +133,7 @@ ___________
 [_Data Analysis_](https://en.wikipedia.org/wiki/Data_analysis) is a process of cleaning, exploring and modeling data with the goal of discovering useful information (insights) and supporting decision-making.
 
 In statistical applications, _DA_ can be divided into:
+
 * **Exploratory Data Analysis**: focuses on discovering new features in the data.
 * **Descriptive Statistics**: summarizes about the sample.
 * **Confirmatory Data Analysis (Inferential Statistics)**: focuses on confirming or falsifying existing hypotheses.
@@ -145,21 +150,23 @@ ___________
 ### Data Compatibility
 
 Data compatibility problems arise when merging datasets. Make sure you are comparing "apples to apples" and not "apples to aranges". Main types of conversions/unifications:
-    * Units (metric vs. imperial)
-    * Numbers (decimals vs. integers)
-    * Names (John Smith vs. Smith, John)
-    * Time/dates (UNIX vs. UTC vs. GMT)
-    * Currency (type, inflation-adjusted, dividends)
+    
+* Units (metric vs. imperial)
+* Numbers (decimals vs. integers)
+* Names (John Smith vs. Smith, John)
+* Time/dates (UNIX vs. UTC vs. GMT)
+* Currency (type, inflation-adjusted, dividends)
     
 ### Data Imputation
 
 Data imputation is the process of dealing with missing values. The proper methods depend on the type of data we are working with. Gereral methods include:
-    * Drop all records containing missing data.
-    * Heuristic-based: make a reasonable guess based on knowledge of the underlying domain.
-    * Mean Value: fill in missing data with the mean.
-    * Random Value
-    * Nearest Neighbor: fill in missing data using similar data points.
-    * Interpolation: use a method like linear regression to prodict the value of the missing data.
+
+* Drop all records containing missing data.
+* Heuristic-based: make a reasonable guess based on knowledge of the underlying domain.
+* Mean Value: fill in missing data with the mean.
+* Random Value
+* Nearest Neighbor: fill in missing data using similar data points.
+* Interpolation: use a method like linear regression to prodict the value of the missing data.
     
 ### Outlier Detection
 
@@ -190,10 +197,11 @@ ___________
 [_Descriptive Statistics_](https://en.wikipedia.org/wiki/Descriptive_statistics) provides a way of capturing a given data set or sample.
 
 There are 3 main types: 
-    1. Centrality
-    2. Variability (Spread)
-    3. Shape
-    
+
+1. Centrality
+2. Variability (Spread)
+3. Shape
+
 ### Centrality
 * **Arithmetic Mean**: aka _Additive Mean_, it's just simply the average, so it has a severe effect of outliers
 * **Geometric Mean**: aka _Multiplicative Mean_. It calculates averaging ratios and the effect of outliers on it is mild. Always less than arithmetic mean.
@@ -270,6 +278,7 @@ Modeling is the process of incorporating information into a tool which can forec
 
 ### More About Random Error
 The error term _re_ is composed of the _reducible_ and _irreducible_ error, which will prevent us from ever obtaining a perfect _f^_ estimate.
+
 * **Reducible**: error that can potentially be reduced by using the most appropriate _statistical learning_ technique to estimate _f_. The goal is to minimize the reducible error.
     
 * **Irreducible**: error that cannot be reduced no matter how well we estimate _f_. Irreducible error is unknown and unmeasurable and will always be an upper bound for _re_.
@@ -337,7 +346,7 @@ Need to determine how good our model is. Best way to assess models is out-of-sam
 
 ### Classification
 
-![](https://github.com/trungtv4597/Data_project/blob/master/images/classification_index.PNG)
+![TP:True-Positive, TN:True-Negative, FP:False-Positive, FN:False-Negative](https://github.com/trungtv4597/Data_project/blob/master/images/classification_index.PNG)
 
 * **Accuracy**: ratio of correct predictions over total predictions. Misleading when class sizes are substantially different. **_accuracy_ = (TP + TN) / (TP+TN+FN+FP)**.
 
