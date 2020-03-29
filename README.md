@@ -314,4 +314,23 @@ Need to determine how good our model is. Best way to assess models is out-of-sam
 
 ![](https://github.com/trungtv4597/Data_project/blob/master/images/classification_index.PNG)
 
-* **Accuracy**: 
+* **Accuracy**: ratio of correct predictions over total predictions. Misleading when class sizes are substantially different. **_accuracy_ = (TP + TN) / (TP+TN+FN+FP)**.
+
+* **Precision**: how often the classifier is correct when it predicts positive. **_precision_ == TP / (TP+FP)**
+
+* **Recall**: how often the classifier is correct for all positive instances. **_recall_ = TP / (TP+FN)**
+
+* **F-Score**: single measurement to describe performance. **_F_ = (2*_precision_*_recall_) / (_precision_*_recall_) **
+
+* **ROC Curves**: plots TP rates and FP rates for various thresholds, or where the model determines if a data point is positive or negative (e.g. if > .8, classify as positive). Best possible area under the ROC curve (AUC) is 1, while random is .5, or the main diagonal line.
+
+### Regression
+Errors are defined as the difference between a prediction _y^_ and the actual result _y_.
+
+* **Absolute Error** = |y^ - y|
+
+* **Squared Error** = (y^ - y)^2, more common than _absolute error_ because it's useful for optimizing.
+
+* **Mean-squared Error (MSE)** = sigma(i:1-n)(y^-i - y-i)^2 / (n)
+
+* **Root MSE** = sqrt(_MSE_)
