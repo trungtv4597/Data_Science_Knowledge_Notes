@@ -22,7 +22,7 @@ ____________________
 * **Categorical** (qualitative): e.g. race, sex, hair color.
 * **Big Data**: data that contains greater _variety_ arriving in increasing _volumes_ and with ever-higher _velocity_ (3 Vs). Cannot fit in the memory of a single machine.
 
-## Data Sources/ Fomats
+### Data Sources/ Fomats
 **Sources**: Companies/Proprietary data, API, Goverment, Academic, Web Scraping/ Crawling.
 **Formats** (most common):
 1. CSV:
@@ -334,3 +334,31 @@ Errors are defined as the difference between a prediction _y^_ and the actual re
 * **Mean-squared Error (MSE)** = sigma(i:1-n)(y^-i - y-i)^2 / (n)
 
 * **Root MSE** = sqrt(_MSE_)
+______
+
+## Modeling - Evaluation Environment
+_Evaluation metrics_ provides us with the tools to estimate errors, but what should be the process to obtain the best estimate? Resampling involves repeatedly drawing samples from a training set and refitting a model to each sample, which provides us with additional information compared to fitting the model once, such as obtaining a better estimate for the test error.
+
+### Key Concepts
+* **Training data**: data used to fit your models or the set used for learning.
+
+* **Validation data**: data used to tune the parameters of a model.
+
+* **Test data**: data used to evaluate how good your model is. Ideally your model should never touch this data until final testing/ evaluation.
+
+### Cross Validation
+Class of methods that estimate test error by holding out a subset of training data from the fitting process.
+
+* **Validataion Set**: split data into training set and validation set. Train model on training set and estimate _test error_ using validation set. e.g 80-20 is the most common split.
+
+* **Leave-One-Out**: split data into training set and validation set, but the validation set consists of _only 1_ observation. Then repeat _n-1_ times until all observations have been used as validation. _Test error_ is the average of these _n_ test error estimates.
+
+* **K-Fold**: randomly divide data into _k_ groups (folds) of approximately equal size. First fold is used as validation and the rest as training. Then repeat _k_ times and find average of the _k_ estimates.
+
+### Bootstrapping
+Methods that rely on random sampling with replacement. Bootstrapping helps with quantifying uncertainty associated with a given estimate or model.
+
+### Amplifying Small Data Sets
+What can we do if we don't have enough data?
+    * **Create Negative Examples**: e.g. classifying presidential candidates, most people would be unqualified so label most as unqualified.
+    * **Synthetic Data**: create additional data by adding noise to the real data.
