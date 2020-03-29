@@ -191,6 +191,8 @@ This is a method that rely on probability theory and **distribution (usually pro
 Two main approaches:
     1. **Estimation**: Calculates _Confidence Interval_ to estimate an interval with a certain percentage of confidence the population parameter wil fall.
     2. **Hypothesis testing**: When we are making a decision, we need a yes-no answer. The correct approach in this case is using a test.
+    
+![Inferential vs. Descriptive -- Population vs. Sample](https://github.com/trungtv4597/Data_project/blob/master/images/Capture.PNG)    
 _______
 
 ## Classic Statistical Distributions
@@ -225,3 +227,91 @@ A distribution is a function that shows the possible values for a variable and h
     * Determine how continuous variable inputs can affect the probability of a binary outcome.
     * Y ~ Logistic(_mean_,_s_) | s: scale parameter.
     * Often used in sports to anticipate how a player's or team's performance can determine the outcome of the match.
+___________
+
+## Modeling - Overview
+Modeling is the process of incorporating information into a tool which can forecast and make predictions. Usually, we are dealing with statistical modeling where we want to analyze relationships between variables. Formally, we want to estimate a function **Y = _f(X)_ + re**:
+    * X = (X1, X2,..., Xn): The input variables.
+    * Y: The output variable.
+    * re: random error.
+    
+**Statistical Learning** is set of appraches for estimating this _f(X)_.    
+
+### Why Estimate _f(X)_?
+
+* **Prediction**: once we have a good estimate _f^(X)_, we can use it to make predictions on new data. We treat _f^_ as a _black box_, since we only care about the accuracy of the predictions, not why or how it works.
+
+* **Inference**: we want to understand the relationship between X and Y. We can no longer treat _f^_ as a black box since we want to understand how Y changes with respect to X.
+
+### More About Random Error
+The error term _re_ is composed of the _reducible_ and _irreducible_ error, which will prevent us from ever obtaining a perfect _f^_ estimate.
+    * **Reducible**: error that can potentially be reduced by using the most appropriate _statistical learning_ technique to estimate _f_. The goal is to minimize the reducible error.
+    
+    * **Irreducible**: error that cannot be reduced no matter how well we estimate _f_. Irreducible error is unknown and unmeasurable and will always be an upper bound for _re_.
+    
+_Note_: There will always be trade-offs between model flexibility (prediction) and model interpretability (inference). This is just another case of the bias-variance trade-off. Typically, as flexibility increases, interpretability decreases. _Much of statistical learning/modeling is finding a way to balance the two_.    
+_________
+
+## Modeling - Philosophies
+Modeling is the process of incorporating information into a tool which can forecast and make predictions. Designing and validating models is important, as well as evaluating the performance of models. _Note that the best forecating model may not be the most accurate one_.
+
+### Philosophies of Modeling
+* **Occam's Razor**: Philosophical principle that _the simplest explanation is the best explanation_. In modeling, if we are given two models that predicts equally well, we should choose the simpler one. Choosing the more complex one can often result in overfitting.
+
+* **Bias Variance Trade-Off**: To select a best model (for your dataset), _we have to achieve level of complexity that is the trade-off spot between bias and  variance_
+    
+    * **Bias**: error from incorrect assumptions. _High bias -> missing relevant relations or **underfitting**_
+    * **Variance**: error from sensitivity or noise in dataset. _High variance -> modeling noise or **overfitting**_
+    
+* **No Free Lunch Theorem**: No single machine learning algorithm is better than all the others on all problems. It is common to try multiple models and find one that works best for a particular problem.
+
+### Thinking Like Nate Silver
+1. **Think Probabilistically**: Probabilistic forecasts are more meaningful than concrete statements and should be reported as proability distributions (including _var_ along with _mean_ prediction).
+
+2. **Incorporate New Information**: Use live models, which continually updates using new information. To update, use Bayesian reasoning to calculate how probabilities change in respnse to new evidence.
+
+3. **Look For Consensus Forecast**: Use multiple distinct sources of evidence. Some models operate this way, such as boosting and bagging, which uses large number of weak classifiers to produce a strong one.
+________
+
+## Modeling - Taxonomy
+There are many different types of models. It is important to understand the trade-offs and when to use a certain typer of model.
+
+### Supervised vs. Unsupervised
+* **Supervised**: models that fit input variables _x = (x1,...,xn)_ to a known output variables _y = (y1,...,yn)_.
+
+* **Unsupervised**: models that take in input variables _x_, but they don't have an associated output to supervise the training. The goal is understand relationships between the variables or observations.
+
+### Parametric vs. Nonparametric
+* **Parametric**: models that first make an assumption about a function form, or shape, or _f_ (e.g. linear). Then fits the model. This reduces estimating _f_ to just estimating set of parameters, but if our assumption was  wrong, will lead to bad results.
+
+* **Non-Parametric**: models that don't make any assumptions about _f_, which allows them to fit a wider range of shapes; but may lead to overfitting.
+
+### Blackbox vs. Descriptive
+* **Backbox**: models that make dexisions, but we do not know what happens "under the hood" e.g. deep learning, neural networks.
+
+* **Descriptive**: models that provide insight into why they make their decisions e.g. linear regression, decision trees.
+
+### First-Principle vs. Data-Driven
+* **First-Principle**: models based on a prior belief of how the system under investigation works, incorporates domain knowledge (ad-hoc).
+
+* **Data-Driven**: models based on observed correlations between input and output variables.
+
+### Deterministic vs. Stochastic
+* **Deterministic**: models that produce a single "prediction" e.g. yes or no, true or false.
+
+* **Stochastic**: models thats produce probability distributions over possible events.
+
+### Flat vs. Hierarchical
+* **Flat**: models that solve problems on a single level, no notion of subproblems.
+
+* **Hierarchical**: models that solve several different nested subproblems.
+________
+
+## Modeling - Evaluation Metrics
+Need to determine how good our model is. Best way to assess models is out-of-sample predictions (data points your model has never seen)
+
+### Classification
+
+![](https://github.com/trungtv4597/Data_project/blob/master/images/classification_index.PNG)
+
+* **Accuracy**: 
