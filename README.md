@@ -360,5 +360,7 @@ Methods that rely on random sampling with replacement. Bootstrapping helps with 
 
 ### Amplifying Small Data Sets
 What can we do if we don't have enough data?
-    * **Create Negative Examples**: e.g. classifying presidential candidates, most people would be unqualified so label most as unqualified.
-    * **Synthetic Data**: create additional data by adding noise to the real data.
+    
+* **Create Negative Examples**: e.g. classifying presidential candidates, most people would be unqualified so label most as unqualified.
+    
+* **Synthetic Data**: create additional data by adding noise to the real data.
