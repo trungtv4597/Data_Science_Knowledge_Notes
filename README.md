@@ -224,8 +224,9 @@ ______
 [Inferential Statistics](https://en.wikipedia.org/wiki/Statistical_inference) is a method that rely on probability theory and **distribution (usually probability distribution)** to predict population values based on sample data.
 
 Two main approaches:
-    1. **Estimation**: Calculates _Confidence Interval_ to estimate an interval with a certain percentage of confidence the population parameter wil fall.
-    2. **[Hypothesis testing](https://en.wikipedia.org/wiki/Statistical_hypothesis_testing)**: When we are making a decision, we need a yes-no answer. The correct approach in this case is using a test.
+1. **Estimation**: Calculates _Confidence Interval_ to estimate an interval with a certain percentage of confidence the population parameter wil fall.
+    
+2. **[Hypothesis testing](https://en.wikipedia.org/wiki/Statistical_hypothesis_testing)**: When we are making a decision, we need a yes-no answer. The correct approach in this case is using a test.
     
 ![Inferential vs. Descriptive -- Population vs. Sample](https://github.com/trungtv4597/Data_project/blob/master/images/Capture.PNG)    
 _______
@@ -269,9 +270,9 @@ Modeling is the process of incorporating information into a tool which can forec
 
 ### More About Random Error
 The error term _re_ is composed of the _reducible_ and _irreducible_ error, which will prevent us from ever obtaining a perfect _f^_ estimate.
-    * **Reducible**: error that can potentially be reduced by using the most appropriate _statistical learning_ technique to estimate _f_. The goal is to minimize the reducible error.
+* **Reducible**: error that can potentially be reduced by using the most appropriate _statistical learning_ technique to estimate _f_. The goal is to minimize the reducible error.
     
-    * **Irreducible**: error that cannot be reduced no matter how well we estimate _f_. Irreducible error is unknown and unmeasurable and will always be an upper bound for _re_.
+* **Irreducible**: error that cannot be reduced no matter how well we estimate _f_. Irreducible error is unknown and unmeasurable and will always be an upper bound for _re_.
     
 _Note_: There will always be trade-offs between model flexibility (prediction) and model interpretability (inference). This is just another case of the bias-variance trade-off. Typically, as flexibility increases, interpretability decreases. _Much of statistical learning/modeling is finding a way to balance the two_.    
 _________
