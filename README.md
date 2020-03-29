@@ -4,6 +4,7 @@ from:
 1. [Marverick Lin](http://mavericklin.com)
 2. [365 Data Science](https://365datascience.com/)
 3. [Machine Learning Co Ban by VuHuuTiep](https://github.com/tiepvupsu/ebookMLCB)
+4. Wikipedia
 
 ## What is data Science?
 Multi-disciplinary field that brings together concepts from computer science, statistics/machine learning, and data analysis to understand and extract insights from data.
@@ -90,8 +91,51 @@ Probability is **the likelihood of an event occurring**.
 * **Cumulative Density Function (CDF)**: CDF has a range from 0 to 1 and represents the sum of all the _PDF_ values up to the point we are interseted in.
 ___________
 
+## Classic Statistical Distributions
+
+A distribution is a function that shows the possible values for a variable and how often they occur. It is a _common mistake_ to believe that the distribution is the _graph_, we often use graphs to visualize the data.
+
+### Discrete
+1. **Binomial Distribution**
+    
+    * Measures the frequency of occurrence of one of the possible outcomes over the n trials. E.g.: Determining how many times we expect to get a heads if we flip a coin 10 coins.
+    * Y ~ Bin(_n_,_p_) | Y: success rate -- n: number of trails -- p: prob of success.
+    * PDF: P(Y=y) = C(y,n) * _p^y_ * _(1-p)^(n-y)_
+    * Often used when trying to predict how likely an event is to occur over a series of trials.
+
+2. **Poisson Distribution**: 
+    
+    * When we want to know the likelihood of a certain event occurring over a given interval of time or distance. 
+    * Y ~ Po(_lambda_) | Y: a specific outcome -- lambda: a interval of time or distance.
+    * Used to determine how likely a specific outcome is, knowing how often the event usually occurs. Often incorporated in marketing analysis to determine whether above average visits are out of the ordinary or not.    
+    
+### Continuous
+1. **Normal/ Gaussian Distribution**
+
+    * Represents a distribution that most natural events follow. E.g. often observed in the size of animals in the wilderness.
+    * Y ~ N(_mean_,_var_)
+    * Its graph is bell-shaped curve, symmetric and ha thin tails.
+    * _68%-95%-99% rule_: 68% of probability mass fall within _1*var_ of the _mean_, 95% within _2*var_, and 99.7% within _3*var_.
+    * Could be standardized to use the Z-table.
+    
+2. **Logistic Distribution**
+
+    * Determine how continuous variable inputs can affect the probability of a binary outcome.
+    * Y ~ Logistic(_mean_,_s_) | s: scale parameter.
+    * Often used in sports to anticipate how a player's or team's performance can determine the outcome of the match.
+___________
+
+## Data Analysis
+[_Data Analysis_](https://en.wikipedia.org/wiki/Data_analysis) is a process of cleaning, exploring and modeling data with the goal of discovering useful information (insights) and supporting decision-making.
+
+In statistical applications, _DA_ can be divided into:
+* **Exploratory Data Analysis**: focuses on discovering new features in the data.
+* **Descriptive Statistics**: summarizes about the sample.
+* **Confirmatory Data Analysis (Inferential Statistics)**: focuses on confirming or falsifying existing hypotheses.
+___________
+
 ## Data Cleaning
-_Data Cleaning_ is the process of turning raw data into a clean and analyzable data set. "Garbage in, garbage out". Make sure garbage doesn't get put in.
+[_Data Cleaning_](https://en.wikipedia.org/wiki/Data_cleansing) is the process of turning raw data into a clean and analyzable data set. "Garbage in, garbage out". Make sure garbage doesn't get put in.
 
 ### Errors vs. Artifacts
 
@@ -128,31 +172,22 @@ Lowercasing, removing non-alphanumeric, repairing, unidecode, removing unknown c
 _Note_: when cleaning data, always maintain both the raw data and the cleaned versions. The raw data should be kept intact and preserved for future use. Any type of data cleaning/analysis should be done on a copy of the raw data.
 ______________
 
-## Feature Engineering
-_Feature enginnering (FE)_ is the process of using domain knowledge to create feature or input variables that help machine learning algorithms perform better. Done correctly, it can help increase the predictive power of your models. _FE_ is more of an art than science. It is one of the most important steps in creating a good model. As Andrew Ng puts in:
-    _"Coming up with features is difficult, time-consuming, requires expert knowledge. 'Applied machine learning' is basically feature engineering."_
-    
-### Continuous Data
-* **Raw Measures**: data that hasn't been transformed yet.
-* **Rounding**: sometimes precision is noise; round to nearest integer, decimal etc..
-* **Scaling**: log, z-score, minmax scale, etc...
-* **Imputation**: fill in missing values using mean, median, model output, etc...
-* **Binning**: trasforming numeric features into categorical ones (or binned) e.g. values between 1-10 belong to A, between 10-20 belong to B, etc...
-* **Interactions**: interactions between features: e.g. subtraction, addition, multiplication, statistical test.
-* **Statistical**: log/power transorm (helps turn skewed distributions more normal), Box-Cox, etc...
-* **Row Statistics**: number of NaN's, 0's, negative values, max, min, etc...
-* **Dimensionality Reduction**: using PCA, clustering, factor analysis, etc...
+## Exploratory Data Analysis
+[_EDA_](https://en.wikipedia.org/wiki/Exploratory_data_analysis) is an approach, which is promoted by [John Tukey](https://en.wikipedia.org/wiki/John_Tukey), to analyze data sets to summarize their main characteristics, _often with visual methods_. The statistical model can be used or not, but primarily EDA is for seeing what the data can tell us beyond the formal modeling or hypothesis testing task.
 
-### Discrete Data
-* **Encoding**: since some ML algorithms connot work on categorical data, we nee to turn cateforical data into numerical data or vectors.
-* **Ordinal Values**: convert each distinct feature into a random number, e.g. (a,b,c) becomes (1,2,3).
-* **One-hot Encoding**: each of the m features becomes a vector of length m with containing only one 1, e.g. (a,b,c) becomes ((1,0,0),(0,1,0),(0,0,1)).
-* **Feature Hashing Scheme**: turns arbitrary features into indices in a vector or matrix.
-* **Embeddings**: if using words, convert words to vectors (word embeddings).
-_________
+### Typical graphical techniques
+* Box plot
+* Histogram
+* Muli-vari chart
+* Run chart
+* Pareto chart
+* Scatter plot
+* Stem-Leaf plot
+* Parallel coordinates
+___________
 
 ## Descriptive Statistics
-Provides a way of capturing a given data set or sample.
+[_Descriptive Statistics_](https://en.wikipedia.org/wiki/Descriptive_statistics) provides a way of capturing a given data set or sample.
 
 There are 3 main types: 
     1. Centrality
@@ -186,48 +221,37 @@ ______
 
 ## Inferential Statistics
 
-This is a method that rely on probability theory and **distribution (usually probability distribution)** to predict population values based on sample data.
+[Inferential Statistics](https://en.wikipedia.org/wiki/Statistical_inference) is a method that rely on probability theory and **distribution (usually probability distribution)** to predict population values based on sample data.
 
 Two main approaches:
     1. **Estimation**: Calculates _Confidence Interval_ to estimate an interval with a certain percentage of confidence the population parameter wil fall.
-    2. **Hypothesis testing**: When we are making a decision, we need a yes-no answer. The correct approach in this case is using a test.
+    2. **[Hypothesis testing](https://en.wikipedia.org/wiki/Statistical_hypothesis_testing)**: When we are making a decision, we need a yes-no answer. The correct approach in this case is using a test.
     
 ![Inferential vs. Descriptive -- Population vs. Sample](https://github.com/trungtv4597/Data_project/blob/master/images/Capture.PNG)    
 _______
 
-## Classic Statistical Distributions
-
-A distribution is a function that shows the possible values for a variable and how often they occur. It is a _common mistake_ to believe that the distribution is the _graph_, we often use graphs to visualize the data.
-
-### Discrete
-1. **Binomial Distribution**
+## Feature Engineering
+_Feature enginnering (FE)_ is the process of using domain knowledge to create feature or input variables that help machine learning algorithms perform better. Done correctly, it can help increase the predictive power of your models. _FE_ is more of an art than science. It is one of the most important steps in creating a good model. As Andrew Ng puts in:
+    _"Coming up with features is difficult, time-consuming, requires expert knowledge. 'Applied machine learning' is basically feature engineering."_
     
-    * Measures the frequency of occurrence of one of the possible outcomes over the n trials. E.g.: Determining how many times we expect to get a heads if we flip a coin 10 coins.
-    * Y ~ Bin(_n_,_p_) | Y: success rate -- n: number of trails -- p: prob of success.
-    * PDF: P(Y=y) = C(y,n) * _p^y_ * _(1-p)^(n-y)_
-    * Often used when trying to predict how likely an event is to occur over a series of trials.
+### Continuous Data
+* **Raw Measures**: data that hasn't been transformed yet.
+* **Rounding**: sometimes precision is noise; round to nearest integer, decimal etc..
+* **Scaling**: log, z-score, minmax scale, etc...
+* **Imputation**: fill in missing values using mean, median, model output, etc...
+* **Binning**: trasforming numeric features into categorical ones (or binned) e.g. values between 1-10 belong to A, between 10-20 belong to B, etc...
+* **Interactions**: interactions between features: e.g. subtraction, addition, multiplication, statistical test.
+* **Statistical**: log/power transorm (helps turn skewed distributions more normal), Box-Cox, etc...
+* **Row Statistics**: number of NaN's, 0's, negative values, max, min, etc...
+* **Dimensionality Reduction**: using PCA, clustering, factor analysis, etc...
 
-2. **Poisson Distribution**: 
-    
-    * When we want to know the likelihood of a certain event occurring over a given interval of time or distance. 
-    * Y ~ Po(_lambda_) | Y: a specific outcome -- lambda: a interval of time or distance.
-    * Used to determine how likely a specific outcome is, knowing how often the event usually occurs. Often incorporated in marketing analysis to determine whether above average visits are out of the ordinary or not.    
-    
-### Continuous
-1. **Normal/ Gaussian Distribution**
-
-    * Represents a distribution that most natural events follow. E.g. often observed in the size of animals in the wilderness.
-    * Y ~ N(_mean_,_var_)
-    * Its graph is bell-shaped curve, symmetric and ha thin tails.
-    * _68%-95%-99% rule_: 68% of probability mass fall within _1*var_ of the _mean_, 95% within _2*var_, and 99.7% within _3*var_.
-    * Could be standardized to use the Z-table.
-    
-2. **Logistic Distribution**
-
-    * Determine how continuous variable inputs can affect the probability of a binary outcome.
-    * Y ~ Logistic(_mean_,_s_) | s: scale parameter.
-    * Often used in sports to anticipate how a player's or team's performance can determine the outcome of the match.
-___________
+### Discrete Data
+* **Encoding**: since some ML algorithms connot work on categorical data, we nee to turn cateforical data into numerical data or vectors.
+* **Ordinal Values**: convert each distinct feature into a random number, e.g. (a,b,c) becomes (1,2,3).
+* **One-hot Encoding**: each of the m features becomes a vector of length m with containing only one 1, e.g. (a,b,c) becomes ((1,0,0),(0,1,0),(0,0,1)).
+* **Feature Hashing Scheme**: turns arbitrary features into indices in a vector or matrix.
+* **Embeddings**: if using words, convert words to vectors (word embeddings).
+_________
 
 ## Modeling - Overview
 Modeling is the process of incorporating information into a tool which can forecast and make predictions. Usually, we are dealing with statistical modeling where we want to analyze relationships between variables. Formally, we want to estimate a function **Y = _f(X)_ + re**:
