@@ -6,17 +6,45 @@ from:
 2. [365 Data Science](https://365datascience.com/)
 3. [Machine Learning Co Ban by VuHuuTiep](https://github.com/tiepvupsu/ebookMLCB)
 4. Wikipedia
+5. [From: Think Like a Data Scientist by Brian Godsey](https://www.manning.com/books/think-like-a-data-scientist)
 
-## What is data Science?
-Multi-disciplinary field that brings together concepts from computer science, statistics/machine learning, and data analysis to understand and extract insights from data.
+____________________
+
+## Philosophies of Data Science
+### What is Data Science?
+The origins of data science as a field of study or vocational pursuit lie somewhere between **statistics** and **software development**. In addition, data science has a third major component which is something along the lines of subject matter expertise or **domain knowledge**. The goal is to understand and extract insights from data.
+
+![Data Science Venn Diagram](https://github.com/trungtv4597/Data_project/blob/master/images/ds_venn_diagram.jpg)
+
+But just as a good accountannt can quickly learn the financial nuances of a new industry, or a good engineer can pick up the specifics of designing various types of products, a good data scientist can switch to a completely new domain and begin to contribute within a short time. That is not to say the domain knowledge has little value, but compared to software skills and statistics, it usually takes the least time to learn well enough to help solve problems involving data. It's also the one interchangeable component of the three.
 
 Two paradigms of data research:
 
 1. **Hypothesis-Driven**: Given a problem, what kind of data do we need to help solve it?
 2. **Data-Driven**: Given some data, what interesting problems can be solved with it?
 
-The heart of data science is to always ask questions. Always be curious about the world. _What can we learn from this data and How to do it?_
-____________________
+### Developer vs. Data Scientist
+In general, software developer design systems consisting of many well-defined components.
+* _"if A, then B"_. E.g. All web app functions exactly work like what thier developer code them.
+
+Data scientists specialize in working with systems that rely on probabilistic statements about data and results.
+* _"if A, the **probably** B"_. E.g. Building a marketing clustering algorithm, but nothing guarantee it work 100% well. There're always the uncertainty in data science project.
+
+### Priority
+Knowledge, technology, and opinions are typically what you have at the beginning of any project; they are the three things that turn data into answers. Using the priority of them like a framework to settle disputes between the varous concerns of very data science project:
+
+* **Knowledge first**: Get to know your problem, your data, your approach, and your goal before you do anything else, and keep those at the forefront of your mind.
+
+* **Technology second**: Software is a tool that serves you. It both enables and constrains you. It shouldn't dictate your approach to the problem except in extenuating circumstances.
+
+* **Opinions third**: Opinions, intuition, and wishful thinking are to be used only as guides toward theories that can be proven corrct and not as the focus of any project.
+
+### Ask Question
+The heart of data science is to always ask questions. Always be curious about the world. _What can we learn from this data and How to do it?_. Never hesitate to have a lengthy discussion with someone who knows the business side of the project and problems you're working on to know a lot more about _project goals_ and _business problems_.
+
+### Stay Close to the Data
+Being _"close to the data"_ means _don't use methods that more complex than needed, and always be conscious of the poosibility of mistakes.
+_____________________
 
 ## Types of Data
 * **Structured**: e.g. tables, spreadsheets, or relational databases.
