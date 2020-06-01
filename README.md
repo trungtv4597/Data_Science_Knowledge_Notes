@@ -6,7 +6,7 @@ from:
 2. [365 Data Science](https://365datascience.com/)
 3. [Machine Learning Co Ban by VuHuuTiep](https://github.com/tiepvupsu/ebookMLCB)
 4. Wikipedia
-5. [From: Think Like a Data Scientist by Brian Godsey](https://www.manning.com/books/think-like-a-data-scientist)
+5. [Think Like a Data Scientist by Brian Godsey](https://www.manning.com/books/think-like-a-data-scientist)
 
 ____________________
 
@@ -57,11 +57,11 @@ _____________________
 **Sources**: Companies/Proprietary data, API, Goverment, Academic, Web Scraping/ Crawling.
 **Formats** (most common):
 
-1. CSV:
-2. XML:
-3. SQL:
-4. JSON:
-5. Protocol buffers:
+* CSV
+* XML
+* SQL
+* JSON
+* Protocol buffers
 ____________________
 
 ## Main Types of Problems

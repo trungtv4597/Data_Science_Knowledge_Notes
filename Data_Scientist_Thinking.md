@@ -6,24 +6,24 @@
 A data science project is organized around the _three phases_ or _12 steps_:
 * **Preparation**: gathering information at the beginning.
     
-1. [_Set Goals_](#goals)
-2. [_Extract_](#extraction)
-3. [_Wrangle_](#wrangling)
-4. [_Assess_](#assessment)
+    1. [_Set Goals_](#goals)
+    2. [_Extract_](#extraction)
+    3. [_Wrangle_](#wrangling)
+    4. [_Assess_](#assessment)
 
 * **Building**: from planning through execution, using what you learned during the **preparation** and all the tools that statistics and software can provide to build the product.    
 
-5. [_Plan_]()
-6. _Analyze_
-7. _Engineer_
-8. _Optimize_
-9. _Execute_
+    5. [_Plan_]()
+    6. _Analyze_
+    7. _Engineer_
+    8. _Optimize_
+    9. _Execute_
 
 * **Finishing**: delivering the product, getting feedback, making revisions, supporting the product, and wrapping up the project.
     
-10. _Deliver_
-11. _Revise_
-12. _Wrap up_
+    10. _Deliver_
+    11. _Revise_
+    12. _Wrap up_
 
 ______________________________
 
@@ -360,37 +360,27 @@ There are 3 way to describe our data or more explicitly the distribution of our 
 * **Mode**: Most frequent element in a dataset.
 
 #### Variability
-* **Variance** and **Standard Deviation**: Measure the dispersion of a set of data points around its mean value.
+* **Variance** and **Standard Deviation**: Measure of the dispersion of a set of data points around its mean value.
     * _Standard Deviation_ == sqrt(_Variance_)
     
-* **Coefficient of variation (CV)**: Measure the ratio of dispersion of a single variable or multi-variables with different unit (e.g. usa-vnd).
+* **Coefficient of variation (CV)**: Measure of the ratio of dispersion of a single variable or multi-variables with different unit (e.g. usa-vnd).
     * _CV_ == _Standard Deviation_ / _mean_
+    
+* **Covariance**: Measure of the joint variability of two variables.
+    * _Positive_ : The two variables move together.
+    * _Negative_ : They move in opposite directions.
+    * _0 (zero)_ : They are independent.
+    
+* **Correlation**: Because _covariance_ can take on values from negative to positive-infinity, this is hard to intuitively interpret. _Correlation_ is a standardized measure of the joint variability of two variables. It only takes on values _between -1 and 1_.
+    
+    * _1_ : That means one variable is perfectly explained by the other.
+    * _(-1)_ : This is also explaining the other one perfectly, but they move in opposite directions.
+    * _0_ : They are independent variables.
 
 #### Shape
 * **Skewness**: Measure the asymmetry that indicates whether the observations in a dataset are concentrated on one side.
-    * Positive: the outliers are to the right (long tail to the right in the distribution graph).
-    * Negative: the outliers are to the left.
-
-### Choosing Specific Descriptive Statistics to Calculate
-Examples of helpful and informative descriptive statistics methods include but are not limited to the previous section. Any or all of these might be helpful in our project, and it's largely a matter of both preference and relevance when deciding which ones we might calculate in order to serve our goals.
-
-It's not always obvious which statistics would be the best choice for our particular project, but we can ask ourselves a few questions what will lead to useful choices:
-
-1. **How much data is there, and how much of it is relevant?**
-
-This is usually fairly straightforward to answer. If the project concerns only a subset of the data, then we should find the totals for that subset as well. 
-
-2. **What are the one or two most relevant aspects of the data with respect to project?**
-
-Think about our project, lool at a few individual data points, and ask, "Which part do I care about the most?"
-
-3. **Considering the most relevant aspects, what do typical data points look like?**
-
-Take the answer to question 2 and calculate some summary statistics on the values corresponding to those aspects.
-
-4. **Considering the most relevant aspects, what do the most extreme data points look like?**
-
-This is similar question 3, but instead of looking at typical values, looks at extreme values such as maximum and minimum. When looking at extreme values, are there any values so hight or so lowe that they don't make sense? How many values are outside a reasonable range? For categorical or other non-numeric data, what are the most common and least common categories? Are all of these meaningful and useful to subsequent analysis?
+    * _Positive_ : the outliers are to the right (long tail to the right in the distribution graph).
+    * _Negative_ : the outliers are to the left.
 
 ## Exploratory Data Analysis
 _Table and graphs_ can convey information more thoroughly and more quickly at times than pure text. Producing tables and graphs and keeping them for reference throughout your project is a good idea.
@@ -422,15 +412,53 @@ _Table and graphs_ can convey information more thoroughly and more quickly at ti
 * **Histogram**: Like bar charts, but for representing intervals.
 
 ### Graphs and Table for Relationships
-1. Categorical
+1. Categorical with Numerical
     
     * **Cross tables** (or continegency tables): On set of categories is labeling the rows and another is labeling the columns. We can fill in the table with the applicable data or relative frequencies.
     
     * **Side-by-side bar charts**: For showing cross tables.
     
-2. Numerical
+2. Numerical with Numerical
     
     * **Scatter plots**: Are useful for regression analysis, as the help us detect patterns (linearity, homoscedasticity).
+    
+## Assessment Targets
+It's not always obvious which descriptive statistics would be the best choice for our particular project, but we can ask ourselves a few questions what will set targets that descriptive statistics need to accomplish:
+
+1. **How much data is there?**
+
+Create a **summary statistics table** for _whole data set_ or _each feature_ of it. 
+
+* _Count_: learn how many data points are there and determine which feature is containing null value (have fewer count value than others).
+
+* Categorical: _Unique_ / _Mode_ / _Frequency_ / _Cumulative_.
+
+* Numerical: _Mean_ / _std_ / _Percentiles_ / _Min-Max_ / _Sum_.
+
+**Bucket analyze table** is also a good ideal for numerical feature.
+
+2. **How much of features are relevant to each other?**
+
+Comparing each feature to the rest of features in data set to explore it.
+
+* Categorical - Numerical: _top/bottom-list_ ; _distribution-frequency-tables_ ; _pareto-charts_.
+
+* Numerical - Numerical: _correlation_ ; _pair-plots_.
+
+* Categorical - Categorical: _cross-tables_ ; _pivot-tables_.
+
+
+3. **What are the one or two most relevant aspects of the data with respect to project?**
+
+Think about our project, lool at a few individual data points, and ask, "Which part do I care about the most?"
+
+4. **Considering the most relevant aspects, what do typical data points look like?**
+
+Take the answer to question 3 and calculate some _summary statistics_ on the values corresponding to those aspects.
+
+5. **Considering the most relevant aspects, what do the most extreme data points look like?**
+
+This is similar question 4, but instead of looking at typical values, looks at extreme values such as maximum and minimum. When looking at extreme values, are there any values so hight or so low that they don't make sense? How many values are outside a reasonable range? For categorical or other non-numeric data, what are the most common and least common categories? Are all of these meaningful and useful to subsequent analysis?    
 
 ## Check Assumptions about the Data
 Whether we like to admit it or not, we all make assumptions about data sets. These assumptions about the data can be expectations or hopes, conscious or subconscious.
@@ -482,5 +510,3 @@ One common goal in data science projects is to be able to find **entities** with
 If it were possible to perform a simple search for these characterizations, the job would be easy and we wouldn't need data science. The main challenge is to create a method of finding these interesting entities in a timely manner.
 
 There are no guarantee that we would find the kind we were looking for, and also no guarantee that we would find any at all. One reason we might not find any is that there might not have been any.
-
-
